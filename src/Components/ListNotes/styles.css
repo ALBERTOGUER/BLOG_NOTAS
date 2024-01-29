@@ -1,0 +1,19 @@
+.expansible-container {
+    margin-bottom: 10px; /* Espacio entre textos */
+}
+  
+.recortado {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.expandido {
+    overflow: visible;
+    white-space: normal;
+}
+
+.card {
+    width: 20rem;
+}
+  
