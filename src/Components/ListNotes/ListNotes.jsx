@@ -1,48 +1,8 @@
 import React, { useState } from 'react'
 import './styles.css'
 
-let notes = [
-    {
-        titulo: 'cocina',
-        autor: 'cocina',
-        fecha: 'cocina',
-        contenido:'loredddddddddddd'
-    },
-    {
-        titulo: '7',
-        autor: 'cocina',
-        fecha: 'cocina',
-        contenido:'loredddddddddddd'
-    },
-    {
-        titulo: '6',
-        autor: 'cocina',
-        fecha: 'cocina',
-        contenido:'loredddddddddddd dfdfs s fs sfdf ffdfffffffffffffffffffffffffffffffffffffffffdddddddddd'
-    },
-    {
-        titulo: '5',
-        autor: 'cocina',
-        fecha: 'cocina',
-        contenido:'loredddddddddddd'
-    },
-    {
-        titulo: '3',
-        autor: 'cocina',
-        fecha: 'cocina',
-        contenido:'loredddddddddddd'
-    },
-    {
-        titulo: '2',
-        autor: 'cocina',
-        fecha: 'cocina',
-        contenido:`asdfsdfsd
-        dfgdsfg
-        dfgdfg sdfsdfsd fsd fsdf sdf sdf sdf sd fsd sdfsdfsdfsdf sdf  dfgdsfgdsfgxfgdgdsgsdfgsdfgdsgdsfgdfgdfgdsfgd`
-    },
-]
 
-const ListNotes = () => {
+const ListNotes = ({notes}) => {
     const [textosCompletos, setTextosCompletos] = useState([]);
 
     const toggleTextoCompleto = (indice) => {
