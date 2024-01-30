@@ -1,4 +1,4 @@
-This project actually contains the Front End  simulation of a notepad blog working with React and Bootstrap
+This project includes the front-end simulation of a notepad blog built with React and Bootstrap.
 ## Available Scripts
 Clone the project with with `git clone https://github.com/ALBERTOGUER/BLOG_NOTAS.git` or download the zip of this project in the folder you want to work and locate in the directory of this new project
 In the project directory, run first:
