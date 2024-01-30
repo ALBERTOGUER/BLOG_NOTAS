@@ -8,7 +8,10 @@ export const getNotes = async () => {
             
         })
         const data = await resp.json()
-        return data
+        return {
+            resp,
+            data
+        }
     } catch (e) {
         console.log(e)
     }

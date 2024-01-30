@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { createNote } from '../../services/notes/notesServices'
 
-const FormNotes = ({setNotes}) => {
+const FormNotes = ({setNotes, setLoading, connection}) => {
     const [ state, setState ] = useState({
         titulo: '',
         autor: '',
@@ -18,11 +18,15 @@ const FormNotes = ({setNotes}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        
+        setLoading(true)
         const data =  await createNote(state)
+        setLoading(false)
         if (data.ok) {
+            // Aquí se podría mostrar un componente que sirva como alerta por cuestiones de tiempo utilicé el que nos proporciona javaScript
             alert('Creado exitosamente')
             setNotes()
+        } else {
+            alert('Error al crear la nota')
         }
         setState({
             titulo: '',
@@ -52,8 +56,13 @@ const FormNotes = ({setNotes}) => {
                     <textarea className="form-control" value={state.contenido} onChange={handleState} name="contenido" id="exampleFormControlTextarea1" rows="3" required></textarea>
                 </div>
         
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" disabled={connection} className="btn btn-primary">Submit</button>
             </form>
+            {connection &&
+                <div className="alert alert-danger mt-3" role="alert">
+                    No hay conexión a internet
+                </div>
+            }
         </div>
     )
 }

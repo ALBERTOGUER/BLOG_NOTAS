@@ -1,0 +1,13 @@
+.floatingComponent {
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    
+    z-index: 1000; /* Ajusta según sea necesario para que esté por encima de otros elementos */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
