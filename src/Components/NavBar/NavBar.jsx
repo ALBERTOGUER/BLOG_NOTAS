@@ -4,8 +4,8 @@ const NavBar = ({ handleFilter }) => {
   const [value, setValue] = useState('')
 
   const handleChange = ({target}) => {
-    setValue(target.value)
-    handleFilter(target.value)
+    setValue(target.value);
+    handleFilter(target.value);
   }
 
   return (

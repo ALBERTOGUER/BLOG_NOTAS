@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { createNote } from '../../services/notes/notesServices'
 
-const FormNotes = ({setNotes, setLoading, connection}) => {
+const FormNotes = ({ setNotes, setLoading, connection }) => {
     const [ state, setState ] = useState({
         titulo: '',
         autor: '',
@@ -13,27 +13,27 @@ const FormNotes = ({setNotes, setLoading, connection}) => {
         setState({
             ...state,
             [target.name] : target.value
-        })
+        });
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        setLoading(true)
-        const data =  await createNote(state)
+        e.preventDefault();
+        setLoading(true);
+        const data =  await createNote(state);
         setLoading(false)
         if (data.ok) {
             // Aquí se podría mostrar un componente que sirva como alerta por cuestiones de tiempo utilicé el que nos proporciona javaScript
-            alert('Creado exitosamente')
-            setNotes()
+            alert('Creado exitosamente');
+            setNotes();
         } else {
-            alert('Error al crear la nota')
+            alert('Error al crear la nota');
         }
         setState({
             titulo: '',
             autor: '',
             contenido: '',
             fecha: '',
-        })
+        });
     }
 
     return (

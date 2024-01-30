@@ -14,34 +14,33 @@ const App = () => {
   const [connection, setConnection] = useState(false)
 
   const handleFilterWord = (word) => {
-    const lowercasedWord = word.trim().toLowerCase()
+    const lowercasedWord = word.trim().toLowerCase();
   
     setNotes(currentNotes.filter(obj => Object.values(obj).some(value => {
       if (typeof value === 'string') {
-        const lowercasedValue = value.toLowerCase()
-        return lowercasedValue.includes(lowercasedWord)
+        const lowercasedValue = value.toLowerCase();
+        return lowercasedValue.includes(lowercasedWord);
       }
-      return false
+      return false;
     })));
   
     if (word.trim() === "") {
-      setNotes(currentNotes)
+      setNotes(currentNotes);
     }
   }
 
   const fetchData = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      let { resp, data } = await getNotes()
+      let { resp, data } = await getNotes();
       if (resp.status === 200) {
-        
-        localStorage.setItem("notes", JSON.stringify(data))
+        localStorage.setItem("notes", JSON.stringify(data));
       } else {
-        setConnection(true)
-        data = localStorage.getItem("notes");
+        setConnection(true);
+        data = JSON.parse(localStorage.getItem("notes"))
       }
-      setNotes(data)
-      setCurrentNotes(data)
+      setNotes(data);
+      setCurrentNotes(data);
       
     } catch (error) {
       console.error('Error al llamar a getNotes:', error);
