@@ -1,9 +1,9 @@
 
 ## Available Scripts
 
-In the project directory, run:
+In the project directory, run first:
 ### `npm i` 
-to install all dependencies and to start just run:
+to install all dependencies, then to start just run:
 ### `npm start`
 
 
